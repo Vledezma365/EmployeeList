@@ -1,0 +1,26 @@
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import EmployeeList from "./EmployeeList";
+
+function App() {
+  const [employees, setEmployees] = useState([
+    { EmployeeId: 1, name: "John Russell" },
+    { EmployeeId: 2, name: "Steve Rodgers" },
+  ]);
+
+  return (
+    <Router>
+      <div className="App">
+        <Routes>
+          {/* Add EmployeeList to the main route */}
+          <Route
+            path="/"
+            element={<EmployeeList employees={employees} />}
+          />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
